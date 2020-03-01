@@ -6,11 +6,12 @@ from .models import Detail
 class UserDetails(forms.ModelForm):
     class Meta:
         model = Detail
-        fields = ['fullname', 'email', 'phone']
+        fields = ['fullname', 'email', 'phone','profile']
         labels = {
             'fullname': 'Full Name',
             'email': 'Email Address',
-            'phone': 'Phone Number'
+            'phone': 'Phone Number',
+            'profile':'Profile Picture',
         }
 
     def __init__(self, *args, **kwargs):

@@ -9,7 +9,7 @@
     <div class="card-body">
         <h5 class="card-title"></h5>
         <p class="card-text">
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <!-- {{form}} -->
                 <div class="form-group">
@@ -26,6 +26,7 @@
                             {{form.phone|as_crispy_field}}
                         </div>
                     </div>
+                    {{form.profile|as_crispy_field}}
 
 
 

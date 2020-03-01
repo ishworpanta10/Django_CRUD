@@ -39,10 +39,10 @@ def add(request, id=0):
         return render(request, 'basic_crud/form.html', context)
     else:
         if id == 0:
-            form = UserDetails(request.POST)
+            form = UserDetails(request.POST, request.FILES or None)
         else:
             edit_user = Detail.objects.get(pk=id)
-            form = UserDetails(request.POST, instance=edit_user)
+            form = UserDetails(request.POST,request.FILES or None, instance=edit_user)
         if form.is_valid():
             # form_data = Detail(
             #     fullname=request.POST['name'], email=request.POST['email'], phone=request.POST['phone'])
